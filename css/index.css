@@ -24,3 +24,8 @@ body {
 .window > .window-body {
     flex: auto;
 }
+
+.window > .window-body > .field-row {
+    display: flex;
+    justify-content: space-around;
+}

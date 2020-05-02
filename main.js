@@ -24,8 +24,8 @@ const WindowsManager = {
 
         // 初始化主窗口
         window.main = new BrowserWindow({
-            width: 265,
-            height: 280,
+            width: 270,
+            height: 285,
             frame: false, // 无边框
             resizable: false, // 不可以调整大小
             webPreferences: {
