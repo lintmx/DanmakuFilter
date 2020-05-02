@@ -20,10 +20,17 @@
     "electron-store": "^5.1.1"
   },
   "build": {
-    "appId": "com.lintmx.danmaku-filter",
+    "appId": "com.lintmx.${name}",
+    "productName": "DanmakuFilter",
+    "copyright": "Copyright © year ${author}",
     "win": {
-      "target": "portable",
-      "icon": "build/icon.png"
+      "target": "zip",
+      "icon": "build/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.utilities",
+      "icon": "build/icon.icns"
     }
   }
 }
