@@ -1,0 +1,81 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-width: 15rem;
+    background: gray;
+    --font-color: '#FFFF00';
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+header {
+    height: 2rem;
+    line-height: 2rem;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    -webkit-app-region: drag;
+}
+
+header>p,header>span {
+    margin: 0 1rem;
+    overflow: hidden;
+    color: var(--font-color);
+}
+
+header>p {
+    width: 70%;
+}
+
+header>span {
+    text-align: right;
+    width: 30%;
+}
+
+header>p {
+    display: inline;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 2rem;
+}
+
+main>ul {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    word-break: break-all;
+}
+
+main>ul::-webkit-scrollbar {
+    display: none;
+}
+
+main>ul>li {
+    margin: 0.25rem 0.75rem;
+    color: var(--font-color);
+}
+
+li>p,li>span {
+    display: inline;
+}
