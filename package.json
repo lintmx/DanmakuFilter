@@ -25,12 +25,12 @@
     "copyright": "Copyright © year ${author}",
     "win": {
       "target": "zip",
-      "icon": "build/icon.ico"
+      "icon": "build/icon.png"
     },
     "mac": {
       "target": "dmg",
       "category": "public.app-category.utilities",
-      "icon": "build/icon.icns"
+      "icon": "build/icon.png"
     }
   }
 }
