@@ -27,6 +27,7 @@ const configProxy = new Proxy(
 );
 
 const DanmakuWin = {
+    AutoScrolling: true, // 自动滚动开关
     init: () => {
         ipcRenderer.on('update-app-config', (event, arg) => {
             Object.assign(configProxy, arg);
@@ -81,6 +82,16 @@ const DanmakuWin = {
         document.querySelector('header>span').addEventListener('dblclick', () => {
             ipcRenderer.send('hidden-danmaku-windows');
         });
+
+        // 滚动弹幕区域事件
+        document.querySelector('main>ul').addEventListener('scroll', (e) => {
+            // 当用户滚动区域时关闭自动滚动
+            if (e.target.scrollHeight !== e.target.scrollTop + e.target.clientHeight) {
+                DanmakuWin.AutoScrolling = false;
+            } else if (e.target.scrollHeight === e.target.scrollTop + e.target.clientHeight) {
+                DanmakuWin.AutoScrolling = true;
+            }
+        })
     },
     getRoomInfo: (id) => {
         // 获取房间信息
@@ -103,7 +114,7 @@ const DanmakuWin = {
     showDanmaku: (user, msg) => {
         const DanmakuList = document.querySelector('main>ul');
         DanmakuList.innerHTML = DanmakuList.innerHTML + `\n<li><p>${user}: </p><span>${msg}</span></li>`;
-        DanmakuList.scrollTop = DanmakuList.scrollHeight;
+        DanmakuWin.AutoScrolling && (DanmakuList.scrollTop = DanmakuList.scrollHeight); // 判断自动滚动 flag
     },
     updateUserName: (value) => {
         document.querySelector('header>p').innerHTML = value;
