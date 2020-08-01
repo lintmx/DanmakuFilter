@@ -1,6 +1,6 @@
 {
   "name": "danmaku-filter",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Yet a danmaku filter",
   "main": "main.js",
   "scripts": {
