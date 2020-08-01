@@ -42,6 +42,9 @@ header>p {
 header>span {
     text-align: right;
     width: 30%;
+
+    -webkit-app-region: no-drag; /* 人数区域用于双击事件 禁止拖拽 */
+    -webkit-user-select: none;
 }
 
 header>p {

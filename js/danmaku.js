@@ -32,6 +32,8 @@ const DanmakuWin = {
             Object.assign(configProxy, arg);
         });
         ipcRenderer.send('get-app-config', { win: 'danmaku' });
+
+        DanmakuWin.initEvent();
     },
     initDanmaku: (id) => {
         // 获取真实 room_id
@@ -73,6 +75,12 @@ const DanmakuWin = {
         });
 
         liveDanmaku.heartbeat();
+    },
+    initEvent: () => {
+        // 双击计数区域最小化窗口
+        document.querySelector('header>span').addEventListener('dblclick', () => {
+            ipcRenderer.send('hidden-danmaku-windows');
+        });
     },
     getRoomInfo: (id) => {
         // 获取房间信息

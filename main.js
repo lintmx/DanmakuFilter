@@ -80,6 +80,9 @@ const WindowsManager = {
             store.set('config', appConfig);
             window.danmaku && window.danmaku.webContents.send('update-app-config', appConfig);
         });
+        ipcMain.on('hidden-danmaku-windows', (event, arg = {}) => {
+            window.danmaku && window.danmaku.minimize()
+        })
     },
     initConfig: () => {
         storedConfig = store.get('config', defaultConfig);
