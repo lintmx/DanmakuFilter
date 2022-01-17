@@ -15,7 +15,7 @@
     "electron-builder": "^22.8.0"
   },
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "bilibili-live-ws": "^5.0.1",
     "electron-store": "^6.0.0"
   },
